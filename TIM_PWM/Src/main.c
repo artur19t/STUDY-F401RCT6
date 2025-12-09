@@ -83,18 +83,19 @@ int main(void)
 
   /* USER CODE END Init */
 
-  /* Configure the system clock */
-  SystemClock_Config();
-
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
+  SystemClock_Config();
   GPIO_PWM_LED_Init();
   GPIO_LED_INDICATOR_Init();
   GPIO_USER_BUT_Init();
+  IT_EXTI0_Init();
+  TIM3_PWM_Init();
+  TIM2_BUT_STATE_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */

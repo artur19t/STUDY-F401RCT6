@@ -35,6 +35,7 @@ extern "C" {
 #include "stm32f4xx_ll_utils.h"
 #include "stm32f4xx_ll_pwr.h"
 #include "stm32f4xx_ll_dma.h"
+#include "stm32f4xx_ll_tim.h"
 #include "stm32f4xx_ll_gpio.h"
 
 #if defined(USE_FULL_ASSERT)
@@ -43,9 +44,11 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdbool.h"
 #include "hw_gpio.h"
 #include "hw_it.h"
 #include "hw_tim.h"
+#include "pwm_control.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -68,9 +71,6 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
-void GPIO_PWM_LED_Init (void);
-void GPIO_LED_INDICATOR_Init (void);
-void GPIO_USER_BUT_Init (void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

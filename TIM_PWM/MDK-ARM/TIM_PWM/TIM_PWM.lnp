@@ -3,6 +3,8 @@
 "tim_pwm\main.o"
 "tim_pwm\stm32f4xx_it.o"
 "tim_pwm\stm32f4xx_ll_gpio.o"
+"tim_pwm\stm32f4xx_ll_tim.o"
+"tim_pwm\stm32f4xx_ll_dma.o"
 "tim_pwm\stm32f4xx_ll_rcc.o"
 "tim_pwm\stm32f4xx_ll_utils.o"
 "tim_pwm\stm32f4xx_ll_exti.o"
@@ -10,6 +12,8 @@
 "tim_pwm\hw_gpio.o"
 "tim_pwm\hw_tim.o"
 "tim_pwm\hw_it.o"
+"tim_pwm\but_state.o"
+"tim_pwm\pwm_control.o"
 --strict --scatter "TIM_PWM\TIM_PWM.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -11,5 +11,6 @@ tim_pwm/hw_gpio.o: ..\User\Src\hw_gpio.c ..\User\Inc\hw_gpio.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_utils.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_pwr.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h \
-  ..\User\Inc\hw_it.h ..\User\Inc\hw_tim.h
+  ..\User\Inc\hw_it.h ..\User\Inc\hw_tim.h ..\User\Inc\pwm_control.h

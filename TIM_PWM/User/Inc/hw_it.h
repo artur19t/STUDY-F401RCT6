@@ -2,4 +2,6 @@
 #define _HW_IT
 
 #include "main.h"
+
+void IT_EXTI0_Init(void);
 #endif

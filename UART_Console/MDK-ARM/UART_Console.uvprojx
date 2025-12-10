@@ -489,6 +489,26 @@
               <FileType>5</FileType>
               <FilePath>..\User\Inc\hw_it.h</FilePath>
             </File>
+            <File>
+              <FileName>hw_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Src\hw_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Inc\hw_uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>hw_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Src\hw_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_dma.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Inc\hw_dma.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -5,4 +5,5 @@
 void GPIO_PWM_LED_Init (void);
 void GPIO_LED_INDICATOR_Init (void);
 void GPIO_USER_BUT_Init (void);
+void GPIO_USART2_Init (void);
 #endif

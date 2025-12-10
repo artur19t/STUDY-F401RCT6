@@ -1,4 +1,4 @@
-uart_console/hw_gpio.o: ..\User\Src\hw_gpio.c ..\User\Inc\hw_gpio.h \
+uart_console/hw_dma.o: ..\User\Src\hw_dma.c ..\User\Inc\hw_dma.h \
   ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_rcc.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
@@ -15,5 +15,5 @@ uart_console/hw_gpio.o: ..\User\Src\hw_gpio.c ..\User\Inc\hw_gpio.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h \
-  ..\User\Inc\hw_it.h ..\User\Inc\hw_tim.h ..\User\Inc\hw_uart.h \
-  ..\User\Inc\hw_dma.h
+  ..\User\Inc\hw_gpio.h ..\User\Inc\hw_it.h ..\User\Inc\hw_tim.h \
+  ..\User\Inc\hw_uart.h

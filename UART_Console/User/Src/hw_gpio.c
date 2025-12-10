@@ -1,7 +1,7 @@
 #include "hw_gpio.h"
-//PB4
-//PC13
-//PA0
+//PB: 4
+//PC: 13
+//PA: 0,2,3
 
 // --- PWM_LED TIM3_CH1 ---
 void GPIO_PWM_LED_Init (void)
@@ -41,4 +41,23 @@ void GPIO_USER_BUT_Init (void)
   GPIO_BUT_Init.Pull = LL_GPIO_PULL_UP;
   GPIO_BUT_Init.Speed = LL_GPIO_SPEED_FREQ_MEDIUM;
   LL_GPIO_Init(GPIOA, &GPIO_BUT_Init);
+}
+
+// --- USART2 GPIO Init ---
+void GPIO_USART2_Init (void)
+{
+  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
+	// --- USART2_TX ---
+	LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+	GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+	GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+	GPIO_InitStruct.Pin = LL_GPIO_PIN_2;
+	GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+	GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_HIGH;
+	GPIO_InitStruct.Alternate = LL_GPIO_AF_7;
+	LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+	// --- USART2_RX ---
+	GPIO_InitStruct.Pin = LL_GPIO_PIN_3;
+	GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
+	LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }

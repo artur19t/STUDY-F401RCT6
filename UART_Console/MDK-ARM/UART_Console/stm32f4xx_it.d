@@ -15,4 +15,5 @@ uart_console/stm32f4xx_it.o: ..\Core\Src\stm32f4xx_it.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h \
-  ..\Core\Inc\stm32f4xx_it.h
+  ..\User\Inc\hw_gpio.h ..\User\Inc\hw_it.h ..\User\Inc\hw_tim.h \
+  ..\User\Inc\hw_uart.h ..\User\Inc\hw_dma.h ..\Core\Inc\stm32f4xx_it.h

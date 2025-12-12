@@ -1,5 +1,5 @@
-uart_console/hw_dma.o: ..\User\Src\hw_dma.c ..\User\Inc\hw_dma.h \
-  ..\Core\Inc\main.h \
+uart_console/usart_data.o: ..\User\Src\usart_data.c \
+  ..\User\Inc\usart_data.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_rcc.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f401xc.h \
@@ -16,4 +16,4 @@ uart_console/hw_dma.o: ..\User\Src\hw_dma.c ..\User\Inc\hw_dma.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h \
   ..\User\Inc\hw_gpio.h ..\User\Inc\hw_it.h ..\User\Inc\hw_tim.h \
-  ..\User\Inc\hw_uart.h ..\User\Inc\usart_data.h
+  ..\User\Inc\hw_uart.h ..\User\Inc\hw_dma.h

@@ -1,6 +1,7 @@
 #include "hw_dma.h"
 
-uint8_t rx_buf[RX_BUF_SIZE];
+uint8_t rx_buf[RX_BUF_SIZE] = {0};
+uint32_t rx_last_pos = 0;
 
 void DMA1_Usr_Init(void)
 {
@@ -28,7 +29,7 @@ void DMA1_Usr_Init(void)
   DMA1_UsrStrctTX_Init.Mode = LL_DMA_MODE_NORMAL;
   DMA1_UsrStrctTX_Init.PeriphOrM2MSrcAddress = (uint32_t)&USART2->DR;
   DMA1_UsrStrctTX_Init.PeriphOrM2MSrcDataSize = LL_DMA_PDATAALIGN_BYTE;
-  DMA1_UsrStrctTX_Init.PeriphOrM2MSrcIncMode = LL_DMA_PERIPH_NOINCREMENT;
+  DMA1_UsrStrctTX_Init.PeriphOrM2MSrcIncMode = LL_DMA_PERIPH_NOINCREMENT; 
   DMA1_UsrStrctTX_Init.Priority = LL_DMA_PRIORITY_LOW;
   LL_DMA_Init(DMA1, LL_DMA_STREAM_6, &DMA1_UsrStrctTX_Init);
   

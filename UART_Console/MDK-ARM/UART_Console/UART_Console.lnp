@@ -15,6 +15,7 @@
 "uart_console\hw_it.o"
 "uart_console\hw_uart.o"
 "uart_console\hw_dma.o"
+"uart_console\usart_data.o"
 --strict --scatter "UART_Console\UART_Console.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -16,4 +16,4 @@ uart_console/hw_tim.o: ..\User\Src\hw_tim.c ..\User\Inc\hw_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h \
   ..\User\Inc\hw_gpio.h ..\User\Inc\hw_it.h ..\User\Inc\hw_uart.h \
-  ..\User\Inc\hw_dma.h
+  ..\User\Inc\hw_dma.h ..\User\Inc\usart_data.h

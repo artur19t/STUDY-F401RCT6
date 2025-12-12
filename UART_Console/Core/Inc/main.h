@@ -46,11 +46,15 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdbool.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "hw_gpio.h"
 #include "hw_it.h"
 #include "hw_tim.h"
 #include "hw_uart.h"
 #include "hw_dma.h"
+#include "usart_data.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

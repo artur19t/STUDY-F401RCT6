@@ -509,6 +509,16 @@
               <FileType>5</FileType>
               <FilePath>..\User\Inc\hw_dma.h</FilePath>
             </File>
+            <File>
+              <FileName>usart_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Src\usart_data.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart_data.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Inc\usart_data.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

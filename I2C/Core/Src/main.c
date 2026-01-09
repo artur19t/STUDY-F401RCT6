@@ -87,7 +87,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  GPIO_I2C2_UsrInit();
+  I2C2_UsrInit();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */

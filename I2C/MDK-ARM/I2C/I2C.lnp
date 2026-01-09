@@ -9,7 +9,7 @@
 "i2c\stm32f4xx_ll_utils.o"
 "i2c\stm32f4xx_ll_exti.o"
 "i2c\system_stm32f4xx.o"
-"i2c\hw_iniit.o"
+"i2c\hw_init.o"
 --strict --scatter "I2C\I2C.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

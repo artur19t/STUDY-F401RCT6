@@ -455,9 +455,9 @@
           <GroupName>User</GroupName>
           <Files>
             <File>
-              <FileName>hw_iniit.c</FileName>
+              <FileName>hw_init.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Src\hw_iniit.c</FilePath>
+              <FilePath>..\User\Src\hw_init.c</FilePath>
             </File>
             <File>
               <FileName>hw_init.h</FileName>

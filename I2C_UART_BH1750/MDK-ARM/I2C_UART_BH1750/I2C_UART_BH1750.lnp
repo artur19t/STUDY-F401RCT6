@@ -1,0 +1,17 @@
+--cpu=Cortex-M4.fp.sp
+"i2c_uart_bh1750\startup_stm32f401xc.o"
+"i2c_uart_bh1750\main.o"
+"i2c_uart_bh1750\stm32f4xx_it.o"
+"i2c_uart_bh1750\stm32f4xx_ll_gpio.o"
+"i2c_uart_bh1750\stm32f4xx_ll_i2c.o"
+"i2c_uart_bh1750\stm32f4xx_ll_dma.o"
+"i2c_uart_bh1750\stm32f4xx_ll_rcc.o"
+"i2c_uart_bh1750\stm32f4xx_ll_utils.o"
+"i2c_uart_bh1750\stm32f4xx_ll_exti.o"
+"i2c_uart_bh1750\stm32f4xx_ll_usart.o"
+"i2c_uart_bh1750\system_stm32f4xx.o"
+"i2c_uart_bh1750\hw_init.o"
+--strict --scatter "I2C_UART_BH1750\I2C_UART_BH1750.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "I2C_UART_BH1750.map" -o I2C_UART_BH1750\I2C_UART_BH1750.axf

@@ -46,6 +46,8 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 #include <string.h>
 #include "hw_init.h"
+
+#define BH1750_ADDR  (0x23 << 1)
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

@@ -3,7 +3,7 @@
 
 #include "main.h"
 
-void GPIO_I2C2_UsrInit(void);
-void I2C2_UsrInit(void);
+void GPIO_I2C1_UsrInit(void);
+void I2C1_UsrInit(void);
 
 #endif

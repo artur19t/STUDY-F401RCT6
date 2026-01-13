@@ -53,7 +53,23 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+static void I2C2_WriteByte(uint8_t addr, uint8_t data)
+{
+    while (LL_I2C_IsActiveFlag_BUSY(I2C1));
 
+    LL_I2C_GenerateStartCondition(I2C1);
+    while (!LL_I2C_IsActiveFlag_SB(I2C1));
+
+    LL_I2C_TransmitData8(I2C1, addr);
+    while (!LL_I2C_IsActiveFlag_ADDR(I2C1));
+    LL_I2C_ClearFlag_ADDR(I2C1);
+
+    while (!LL_I2C_IsActiveFlag_TXE(I2C1));
+    LL_I2C_TransmitData8(I2C1, data);
+
+    while (!LL_I2C_IsActiveFlag_BTF(I2C1));
+    LL_I2C_GenerateStopCondition(I2C1);
+}
 /* USER CODE END 0 */
 
 /**
@@ -87,13 +103,16 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  GPIO_I2C2_UsrInit();
-  I2C2_UsrInit();
+  GPIO_I2C1_UsrInit();
+  I2C1_UsrInit();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
 
+  I2C2_WriteByte(BH1750_ADDR, 0x01);  // Power ON
+  //(Continuous H-Resolution)
+  I2C2_WriteByte(BH1750_ADDR, 0x10);
   /* USER CODE END 2 */
 
   /* Infinite loop */

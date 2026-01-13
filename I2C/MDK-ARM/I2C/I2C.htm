@@ -3,11 +3,11 @@
 <title>Static Call Graph - [I2C\I2C.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image I2C\I2C.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Fri Jan  9 19:56:16 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Tue Jan 13 14:39:42 2026
 <BR><P>
 <H3>Maximum Stack Usage =         96 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; I2C2_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
+__rt_entry_main &rArr; main &rArr; I2C1_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
 <P>
 <H3>
 Functions with no stack information
@@ -220,7 +220,7 @@ Global Symbols
 
 <P><STRONG><a name="[4e]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; I2C2_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; I2C1_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -474,8 +474,8 @@ Global Symbols
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
-<P><STRONG><a name="[58]"></a>GPIO_I2C2_UsrInit</STRONG> (Thumb, 98 bytes, Stack size 48 bytes, hw_init.o(.text.GPIO_I2C2_UsrInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = GPIO_I2C2_UsrInit &rArr; LL_GPIO_Init
+<P><STRONG><a name="[58]"></a>GPIO_I2C1_UsrInit</STRONG> (Thumb, 104 bytes, Stack size 48 bytes, hw_init.o(.text.GPIO_I2C1_UsrInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = GPIO_I2C1_UsrInit &rArr; LL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_GPIO_Init
 </UL>
@@ -489,8 +489,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
-<P><STRONG><a name="[5a]"></a>I2C2_UsrInit</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, hw_init.o(.text.I2C2_UsrInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = I2C2_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
+<P><STRONG><a name="[5a]"></a>I2C1_UsrInit</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, hw_init.o(.text.I2C1_UsrInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = I2C1_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_I2C_Init
 </UL>
@@ -500,7 +500,7 @@ Global Symbols
 <P><STRONG><a name="[59]"></a>LL_GPIO_Init</STRONG> (Thumb, 208 bytes, Stack size 36 bytes, stm32f4xx_ll_gpio.o(.text.LL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = LL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_I2C2_UsrInit
+<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_I2C1_UsrInit
 </UL>
 
 <P><STRONG><a name="[5b]"></a>LL_I2C_Init</STRONG> (Thumb, 240 bytes, Stack size 40 bytes, stm32f4xx_ll_i2c.o(.text.LL_I2C_Init))
@@ -508,7 +508,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_GetSystemClocksFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C2_UsrInit
+<BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C1_UsrInit
 </UL>
 
 <P><STRONG><a name="[5e]"></a>LL_Init1msTick</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f4xx_ll_utils.o(.text.LL_Init1msTick))
@@ -567,11 +567,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
-<P><STRONG><a name="[4f]"></a>main</STRONG> (Thumb, 130 bytes, Stack size 8 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; I2C2_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
+<P><STRONG><a name="[4f]"></a>main</STRONG> (Thumb, 338 bytes, Stack size 8 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; I2C1_UsrInit &rArr; LL_I2C_Init &rArr; LL_RCC_GetSystemClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C2_UsrInit
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_I2C2_UsrInit
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C1_UsrInit
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_I2C1_UsrInit
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main

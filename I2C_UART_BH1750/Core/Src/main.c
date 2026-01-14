@@ -42,7 +42,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t rx_buf[RX_SIZE];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -92,7 +92,13 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
+  GPIO_USART2_Init();
+  GPIO_I2C1_Init();
 
+  USART2_UsrInit();
+  DMA1_UsrInit();
+
+  I2C1_UsrInit();
   /* USER CODE END 2 */
 
   /* Infinite loop */

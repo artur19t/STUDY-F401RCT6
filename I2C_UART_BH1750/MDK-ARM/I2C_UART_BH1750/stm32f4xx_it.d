@@ -15,4 +15,4 @@ i2c_uart_bh1750/stm32f4xx_it.o: ..\Core\Src\stm32f4xx_it.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h \
-  ..\Core\Inc\stm32f4xx_it.h
+  ..\User\Inc\hw_init.h ..\Core\Inc\stm32f4xx_it.h

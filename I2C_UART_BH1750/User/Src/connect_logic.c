@@ -47,3 +47,49 @@ void send_string_usart2 (const char *buf, uint16_t len)
   LL_DMA_EnableStream(DMA1, LL_DMA_STREAM_6);
   LL_USART_EnableDMAReq_TX(USART2);
 }
+
+uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
+{
+  uint32_t t;
+  t = 200000;
+  while (LL_I2C_IsActiveFlag_BUSY(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+
+  t = 200000;
+  LL_I2C_GenerateStartCondition(I2C1);
+  while (!LL_I2C_IsActiveFlag_SB(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+
+  LL_I2C_TransmitData8(I2C1, addr);
+  t = 200000;
+  while (!LL_I2C_IsActiveFlag_ADDR(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+  LL_I2C_ClearFlag_ADDR(I2C1);
+
+  t = 200000;
+  while (!LL_I2C_IsActiveFlag_TXE(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+  LL_I2C_TransmitData8(I2C1, data);
+
+  t = 200000;
+  while (!LL_I2C_IsActiveFlag_BTF(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+  LL_I2C_GenerateStopCondition(I2C1);
+  
+  return 1;
+}

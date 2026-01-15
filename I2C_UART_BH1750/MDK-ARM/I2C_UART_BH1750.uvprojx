@@ -469,6 +469,26 @@
               <FileType>5</FileType>
               <FilePath>..\User\Inc\hw_init.h</FilePath>
             </File>
+            <File>
+              <FileName>connect_logic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Src\connect_logic.c</FilePath>
+            </File>
+            <File>
+              <FileName>connect_logic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Inc\connect_logic.h</FilePath>
+            </File>
+            <File>
+              <FileName>IT_Handlers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Src\IT_Handlers.c</FilePath>
+            </File>
+            <File>
+              <FileName>IT_Handlers.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Inc\IT_Handlers.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

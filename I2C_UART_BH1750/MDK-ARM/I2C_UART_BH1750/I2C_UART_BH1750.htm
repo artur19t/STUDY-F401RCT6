@@ -3,7 +3,7 @@
 <title>Static Call Graph - [I2C_UART_BH1750\I2C_UART_BH1750.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image I2C_UART_BH1750\I2C_UART_BH1750.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Wed Jan 14 13:07:22 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Jan 15 20:12:41 2026
 <BR><P>
 <H3>Maximum Stack Usage =        128 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -37,7 +37,7 @@ Function Pointers
  <LI><a href="#[18]">DMA1_Stream3_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[19]">DMA1_Stream4_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[1a]">DMA1_Stream5_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
- <LI><a href="#[1b]">DMA1_Stream6_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
+ <LI><a href="#[1b]">DMA1_Stream6_IRQHandler</a> from it_handlers.o(.text.DMA1_Stream6_IRQHandler) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[30]">DMA1_Stream7_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[34]">DMA2_Stream0_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
  <LI><a href="#[35]">DMA2_Stream1_IRQHandler</a> from startup_stm32f401xc.o(.text) referenced from startup_stm32f401xc.o(RESET)
@@ -270,9 +270,6 @@ Global Symbols
 <P><STRONG><a name="[1a]"></a>DMA1_Stream5_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
-<P><STRONG><a name="[1b]"></a>DMA1_Stream6_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
-</UL>
 <P><STRONG><a name="[30]"></a>DMA1_Stream7_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
@@ -487,6 +484,9 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BusFault_Handler
 </UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
+</UL>
+<P><STRONG><a name="[1b]"></a>DMA1_Stream6_IRQHandler</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, it_handlers.o(.text.DMA1_Stream6_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
 <P><STRONG><a name="[58]"></a>DMA1_UsrInit</STRONG> (Thumb, 246 bytes, Stack size 96 bytes, hw_init.o(.text.DMA1_UsrInit))

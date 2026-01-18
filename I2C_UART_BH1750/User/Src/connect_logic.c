@@ -58,6 +58,48 @@ void send_arr_usart2 (const char *buf, uint16_t len)
   LL_USART_EnableDMAReq_TX(USART2);
 }
 
+uint16_t I2C_Read2Bytes(uint8_t address)
+{
+  uint8_t data[2];
+  uint32_t t;
+  
+  LL_I2C_GenerateStartCondition(I2C1);
+  t = 200000;
+  while(!LL_I2C_IsActiveFlag_SB(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+  
+  LL_I2C_TransmitData8(I2C1, (address) | 0x01); // read
+  t = 200000;
+  while(!LL_I2C_IsActiveFlag_ADDR(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+  
+  LL_I2C_AcknowledgeNextData(I2C1, LL_I2C_NACK);
+  LL_I2C_EnableBitPOS(I2C1);
+  (void)I2C1->SR2;
+  
+  t = 200000;
+  while(!LL_I2C_IsActiveFlag_BTF(I2C1))
+  {
+    if(--t==0) 
+      return 0; 
+  }
+    
+  LL_I2C_GenerateStopCondition(I2C1);
+  
+  data[0] = LL_I2C_ReceiveData8(I2C1);
+  data[1] = LL_I2C_ReceiveData8(I2C1);
+  LL_I2C_DisableBitPOS(I2C1);
+  uint16_t raw = (data[0] << 8) | data[1];
+  
+  return raw;
+}
+
 uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
 {
   uint32_t t;

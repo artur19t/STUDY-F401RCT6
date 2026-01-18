@@ -99,6 +99,8 @@ int main(void)
   DMA1_UsrInit();
 
   I2C1_UsrInit();
+  
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */

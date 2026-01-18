@@ -107,7 +107,7 @@ uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
   while (LL_I2C_IsActiveFlag_BUSY(I2C1))
   {
     if(--t==0) 
-      return 0; 
+      return 1; 
   }
 
   t = 200000;
@@ -115,7 +115,7 @@ uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
   while (!LL_I2C_IsActiveFlag_SB(I2C1))
   {
     if(--t==0) 
-      return 0; 
+      return 2; 
   }
 
   LL_I2C_TransmitData8(I2C1, addr);
@@ -123,7 +123,7 @@ uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
   while (!LL_I2C_IsActiveFlag_ADDR(I2C1))
   {
     if(--t==0) 
-      return 0; 
+      return 3; 
   }
   LL_I2C_ClearFlag_ADDR(I2C1);
 
@@ -131,7 +131,7 @@ uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
   while (!LL_I2C_IsActiveFlag_TXE(I2C1))
   {
     if(--t==0) 
-      return 0; 
+      return 4; 
   }
   LL_I2C_TransmitData8(I2C1, data);
 
@@ -139,11 +139,11 @@ uint8_t I2C2_WriteByte(uint8_t addr, uint8_t data)
   while (!LL_I2C_IsActiveFlag_BTF(I2C1))
   {
     if(--t==0) 
-      return 0; 
+      return 5; 
   }
   LL_I2C_GenerateStopCondition(I2C1);
   
-  return 1;
+  return 0;
 }
 
 void USART2_logic(uint8_t *buf, uint16_t dSize, bool need_s)
@@ -158,7 +158,16 @@ void USART2_logic(uint8_t *buf, uint16_t dSize, bool need_s)
     switch (res)
     {
       case PARSE_OK:
-        //logic
+        if (val == 1)
+        {
+          BH1750_Init();
+        }else if (val == 2)
+        {
+          uint16_t raw = 0;
+          raw = I2C_Read2Bytes(BH1750_ADDR_GND);
+          raw = (raw * 10) / 12;
+          USART2_SendNumber(raw);
+        }
         break;
       case PARSE_ERR_EMPTY:
       {
@@ -242,4 +251,25 @@ void send_string_usart2 (const char *buf)
   
   LL_DMA_EnableStream(DMA1, LL_DMA_STREAM_6);
   LL_USART_EnableDMAReq_TX(USART2);
+}
+
+void BH1750_Init(void)
+{
+  if (I2C2_WriteByte(BH1750_ADDR_GND, BH1750_CMD_POWER_ON) != 0) {
+    send_string_usart2("BH1750: POWER_ON failed\r\n");
+    return;
+  }
+  LL_mDelay(10);
+
+  if (I2C2_WriteByte(BH1750_ADDR_GND, BH1750_CMD_RESET) != 0) {
+    send_string_usart2("BH1750: RESET failed (ignored)\r\n");
+    return;
+  }
+  LL_mDelay(10);
+
+  if (I2C2_WriteByte(BH1750_ADDR_GND, BH1750_CMD_CONT_H) != 0) {      
+    send_string_usart2("BH1750: START MEASUREMENT failed\r\n");
+    return;
+  }
+  LL_mDelay(200);
 }
